@@ -2,6 +2,24 @@
 
 CodeLens is a Streamlit web app that allows users to compile and understand their code step by step. It integrates a code compiler API and utilizes GenerativeAI for code explanations.
 
+# CodeLens: Compile & Explain
+
+CodeLens is a web application that allows you to compile and explain your code step by step. Choose your preferred programming language from the list of supported languages and enter your code. CodeLens will compile the code and provide an explanation of how it works.
+
+## Supported Languages
+
+- Python3
+- Java
+- C
+- CPP
+- R
+- Kotlin
+- PHP
+- Swift
+- Go
+- Rust
+- Ruby
+
 ## Features
 
 - Compile code in multiple programming languages.
@@ -28,4 +46,7 @@ CodeLens is a Streamlit web app that allows users to compile and understand thei
    ```bash
    git clone https://github.com/jayachandranpm/CodeLens-Compile-Explain.git
    cd CodeLens-Compile-Explain
+
+
+Feel free to contribute, report issues, or suggest enhancements. Happy coding!
 
