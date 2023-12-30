@@ -51,6 +51,9 @@ CodeLens uses the GenerativeAI library, specifically the Gemini API, for code ex
    git clone https://github.com/jayachandranpm/CodeLens-Compile-Explain.git
    cd CodeLens-Compile-Explain
 
+## Donate
+
+If you find CodeLens helpful and would like to support its development, consider making a donation through [PayPal](https://paypal.me/jayachandranpm?country.x=IN&locale.x=en_GB). Your support is greatly appreciated!
 
 Feel free to contribute, report issues, or suggest enhancements. Happy coding!
 
