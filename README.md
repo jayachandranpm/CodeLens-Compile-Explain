@@ -27,5 +27,5 @@ CodeLens is a Streamlit web app that allows users to compile and understand thei
 
    ```bash
    git clone https://github.com/jayachandranpm/CodeLens-Compile-Explain.git
-cd CodeLens-Compile-Explain
+   cd CodeLens-Compile-Explain
 
