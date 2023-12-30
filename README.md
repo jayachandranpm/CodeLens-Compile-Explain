@@ -39,6 +39,10 @@ CodeLens is a web application that allows you to compile and explain your code s
 - GenerativeAI: Google's GenerativeAI library for natural language generation.
 - RapidAPI: Online Code Compiler API for code compilation.
 
+## How to Access and Use Gemini API for Free
+
+CodeLens uses the GenerativeAI library, specifically the Gemini API, for code explanations. You can access and use the Gemini API for free by following the instructions in this [tutorial](https://www.kdnuggets.com/how-to-access-and-use-gemini-api-for-free). Make sure to obtain an API key and configure it in the application.
+
 ## Setup Instructions
 
 1. Clone the repository:
