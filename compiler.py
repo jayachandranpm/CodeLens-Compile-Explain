@@ -8,42 +8,6 @@ os.environ['GOOGLE_API_KEY'] = "AIzaSyAXdqL57ifjEXUyrrDsyQ8C3sU4VfOzcIg"
 # Configure GenerativeAI library with the API key
 genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 
-def get_supported_languages():
-    url = "https://online-code-compiler.p.rapidapi.com/v1/languages"
-    headers = {
-        "X-RapidAPI-Key": "cb95cc8924mshc0cdc4f61ded9cdp166837jsn803257658a9d",
-        "X-RapidAPI-Host": "online-code-compiler.p.rapidapi.com",
-    }
-
-    response = requests.get(url, headers=headers)
-    
-    # Check if the response is successful (status code 200)
-    if response.status_code == 200:
-        languages_data = response.json()
-        
-        # Extract only the names from the response
-        language_names = [language['name'] for language in languages_data]
-        
-        # Ensure that the list of names is not empty
-        if language_names:
-            return language_names
-        
-        # Handle the case where the list of names is empty
-        else:
-            print("No supported languages found.")
-            return []
-    
-    # Handle the case where the request is not successful
-    else:
-        print(f"Failed to fetch supported languages. Status code: {response.status_code}")
-        return []
-
-# Example usage
-supported_language_names = get_supported_languages()
-if supported_language_names:
-    print("Supported language names:", supported_language_names)
-
-
 def generate_content(prompt):
     # Generate content using the GenerativeAI library
     model = genai.GenerativeModel('gemini-pro')
@@ -71,16 +35,18 @@ def compile_code(language, code):
 def main():
     st.title("CodeLens: Compile & Explain")
 
-    # Get the list of supported programming languages
-    supported_languages = get_supported_languages()
-
     # Input: programming language and code
-    language = st.selectbox("Select Programming Language", supported_languages)
+    top_languages = [
+        "Python3", "Java", "C", "CPP", "R", "Kotlin", "PHP",
+        "Swift", "Go", "Rust", "Ruby"
+    ]
+
+    language = st.selectbox("Select Programming Language", top_languages)
     code = st.text_area("Enter Your Code Here", height=10)
 
     if st.button("Compile and Generate Explanation"):
         # Compile code and get the result
-        compile_result = compile_code(language, code)
+        compile_result = compile_code(language.lower(), code)
 
         # Include compiled output in the prompt for GenerativeAI
         prompt = f"Explain how the following code works in {language}:\n\n{code}\n\nCompiled Output:\n\n"
